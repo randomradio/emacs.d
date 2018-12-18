@@ -1,0 +1,14 @@
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (go-mode vimrc-mode visual-regexp stripe-buffer color-theme elpa-mirror artbollocks-mode toc-org shackle magit adoc-mode keyfreq auto-package-update counsel-css slime evil-textobj-syntax evil-args evil-lion evil-visualstar evil-surround evil-nerd-commenter evil-matchit evil-mark-replace evil-iedit-state evil-find-char-pinyin evil-exchange evil-escape jss websocket bash-completion ace-pinyin iedit package-lint emms dumb-jump web-mode pyim ivy-hydra hydra neotree simple-httpd legalese elpy company-statistics company-c-headers company yasnippet-snippets cliphist git-link tagedit ace-mc rjsx-mode js2-refactor js2-mode js-doc multi-term ace-window buffer-move counsel-gtags w3m unfill session emmet-mode ruby-compilation groovy-mode regex-tool command-log-mode ibuffer-vc counsel-bbdb find-file-in-project counsel swiper ivy textile-mode scratch diminish htmlize connection link markdown-mode scss-mode haml-mode writeroom-mode nvm jump find-by-pinyin-dired pinyinlib findr erlang yaml-mode lua-mode request wgrep gist gitconfig-mode gitignore-mode ace-link smex exec-path-from-shell evil fullframe))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
