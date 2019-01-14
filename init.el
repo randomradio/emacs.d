@@ -80,6 +80,9 @@
   (require 'init-modeline)
   (require 'init-utils)
   (require 'init-elpa)
+  (require 'init-evil)
+  (require 'init-themes)
+  (require 'init-keys)
 
   ;;----------------------------------------------------------------------------
   ;; @see https://github.com/hlissner/doom-emacs/wiki/FAQ
