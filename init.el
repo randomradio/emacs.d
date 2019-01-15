@@ -82,6 +82,14 @@
   (require 'init-elpa)
   (require 'init-evil)
   (require 'init-themes)
+  (require 'init-clipboard)
+  ;; Code completion
+  (require 'init-company)
+  ;; fuzzy search
+  (require 'init-ivy)
+  ;; programming langs
+
+  ;; which-key and keybindings
   (require 'init-keys)
 
   ;;----------------------------------------------------------------------------
