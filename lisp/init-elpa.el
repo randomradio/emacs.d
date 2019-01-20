@@ -104,5 +104,22 @@ locate PACKAGE."
 (require-package 'exec-path-from-shell)
 ;; package manager
 (require-package 'use-package)
+;; general keys
+(require-package 'general)
+;; folder, neotree
+(require-package 'neotree)
+;; evil related packages 
+(require-package 'evil-escape)
+(require-package 'evil-exchange)
+(require-package 'evil-find-char-pinyin)
+(require-package 'evil-iedit-state)
+(require-package 'evil-mark-replace)
+(require-package 'evil-matchit)
+(require-package 'evil-nerd-commenter)
+(require-package 'evil-surround)
+(require-package 'evil-visualstar)
+(require-package 'evil-lion)
+(require-package 'evil-args)
+(require-package 'evil-textobj-syntax)
 
 (provide 'init-elpa)

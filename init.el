@@ -55,6 +55,19 @@
   (setq gc-cons-percentage 0.5)
   (run-with-idle-timer 5 t #'garbage-collect))
 
+(defmacro local-require (pkg)
+  `(unless (featurep ,pkg)
+     (load (expand-file-name
+             (cond
+               ((eq ,pkg 'bookmark+)
+                (format "~/.emacs.d/site-lisp/bookmark-plus/%s" ,pkg))
+               ((eq ,pkg 'go-mode-load)
+                (format "~/.emacs.d/site-lisp/go-mode/%s" ,pkg))
+               (t
+                 (format "~/.emacs.d/site-lisp/%s/%s" ,pkg ,pkg))))
+           t t)))
+
+
 ;; *Message* buffer should be writable in 24.4+
 (defadvice switch-to-buffer (after switch-to-buffer-after-hack activate)
   (if (string= "*Messages*" (buffer-name))
@@ -80,11 +93,14 @@
   (require 'init-modeline)
   (require 'init-utils)
   (require 'init-elpa)
+  (require 'init-misc)
   (require 'init-evil)
   (require 'init-themes)
   (require 'init-clipboard)
-  ;; Code completion
+  (require 'init-org)
+
   (require 'init-company)
+  (require 'init-python)
   ;; fuzzy search
   (require 'init-ivy)
   ;; programming langs
