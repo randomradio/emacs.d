@@ -93,7 +93,6 @@
   (require 'init-modeline)
   (require 'init-utils)
   (require 'init-elpa)
-  (require 'init-dired)
   (require 'init-misc)
   (require 'init-evil)
   (require 'init-themes)
@@ -134,3 +133,4 @@
 ;;; no-byte-compile: t
 ;;; End:
 (put 'erase-buffer 'disabled nil)
+(put 'dired-find-alternate-file 'disabled nil)
