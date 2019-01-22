@@ -98,9 +98,13 @@
   (require 'init-themes)
   (require 'init-clipboard)
   (require 'init-org)
-
   (require 'init-company)
+
   (require 'init-python)
+  (require 'init-go)
+
+
+ (provide 'init-go)
   ;; fuzzy search
   (require 'init-ivy)
   ;; programming langs
