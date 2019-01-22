@@ -93,6 +93,7 @@
   (require 'init-modeline)
   (require 'init-utils)
   (require 'init-elpa)
+  (require 'init-dired)
   (require 'init-misc)
   (require 'init-evil)
   (require 'init-themes)
