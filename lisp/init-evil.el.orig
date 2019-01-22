@@ -94,7 +94,11 @@
             "gcc" 'magit-commit-popup
             "gca" 'magit-commit-amend
             "gja" 'magit-commit-extend
+<<<<<<< Updated upstream
+            "gtt" 'magit-stash
+=======
             "gtt" 'magit-stash-both
+>>>>>>> Stashed changes
             "gta" 'magit-stash-apply
       )
     ;; }}
