@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
- rename-file
- load-theme
- expand-abbrev
- rename-buffer
- company-complete
- gofmt
  eval-buffer
+ package-list-packages
+ package-refresh-contents
+ delete-file
+ rename-file
+ package-reinstall
+ package-install
 )
 
 ;; ----- smex-data -----
@@ -16,15 +16,15 @@
  (org-capture . 3)
  (comment-region . 1)
  (comment-line . 1)
- (eval-buffer . 14)
+ (eval-buffer . 21)
  (dired-advertised-find-file . 5)
  (dired-find-alternate-file . 5)
  (eval-expression . 1)
- (package-refresh-contents . 2)
- (package-install . 3)
+ (package-refresh-contents . 3)
+ (package-install . 4)
  (counsel-file-register . 1)
- (delete-file . 2)
- (package-reinstall . 1)
+ (delete-file . 4)
+ (package-reinstall . 2)
  (company-mode . 3)
  (company-complete . 2)
  (save-buffer . 1)
@@ -33,5 +33,6 @@
  (load-theme . 4)
  (rename-buffer . 1)
  (expand-abbrev . 1)
- (rename-file . 2)
+ (rename-file . 3)
+ (package-list-packages . 3)
 )
