@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
+ web-mode
  eval-buffer
- package-list-packages
+ web-mode-block-close
+ eval-region
  package-refresh-contents
- delete-file
- rename-file
- package-reinstall
  package-install
+ web-mode-enable
 )
 
 ;; ----- smex-data -----
@@ -16,12 +16,12 @@
  (org-capture . 3)
  (comment-region . 1)
  (comment-line . 1)
- (eval-buffer . 21)
+ (eval-buffer . 25)
  (dired-advertised-find-file . 5)
  (dired-find-alternate-file . 5)
  (eval-expression . 1)
- (package-refresh-contents . 3)
- (package-install . 4)
+ (package-refresh-contents . 4)
+ (package-install . 6)
  (counsel-file-register . 1)
  (delete-file . 4)
  (package-reinstall . 2)
@@ -35,4 +35,10 @@
  (expand-abbrev . 1)
  (rename-file . 3)
  (package-list-packages . 3)
+ (dired-up-directory . 1)
+ (web-mode . 4)
+ (web-mode-tag-end . 1)
+ (web-mode-enable . 1)
+ (eval-region . 2)
+ (web-mode-block-close . 2)
 )

@@ -25,15 +25,4 @@
   (with-eval-after-load 'company
     (add-to-list 'company-backends 'company-go)))
 
-(use-package company-web
-  :ensure t
-  :defer t
-  :init
-  (with-eval-after-load 'company
-    (add-to-list 'company-backends 'company-web))
-  (add-hook 'web-mode-hook (lambda ()
-                          (set (make-local-variable 'company-backends) '(company-web))
-                          (company-mode t)))
-  )
-
 (provide 'init-company)

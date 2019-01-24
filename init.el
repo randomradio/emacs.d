@@ -102,9 +102,7 @@
 
   (require 'init-python)
   (require 'init-go)
-
-
- (provide 'init-go)
+  (require 'init-web)
   ;; fuzzy search
   (require 'init-ivy)
   ;; programming langs
