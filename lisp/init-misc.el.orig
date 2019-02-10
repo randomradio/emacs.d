@@ -13,17 +13,14 @@
 (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
 (setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
 (setq scroll-step 1) ;; keyboard scroll one line at a time
-(when (eq window-system nil)
-  (xterm-mouse-mode t)
-  (global-set-key [mouse-5] 'scroll-up-line)
-  (global-set-key [mouse-4] 'scroll-down-line)
-  )
 
 ;; Window split and foucs to target window
 ;; @see https://stackoverflow.com/questions/6464738/how-can-i-switch-focus-after-buffer-split-in-emacs
 (global-set-key "\C-x2" (lambda () (interactive)(split-window-vertically) (other-window 1)))
 (global-set-key "\C-x3" (lambda () (interactive)(split-window-horizontally) (other-window 1)))
 
+<<<<<<< HEAD
+=======
 ;; Better backups files
 ;; @see https://stackoverflow.com/questions/151945/how-do-i-control-how-emacs-makes-backup-files
 ;; Default and per-save backups go here:
@@ -36,4 +33,5 @@
       backup-by-copying-when-linked t)  ;; Copy all files, don't rename them.
 
 
+>>>>>>> update evil, move which-key into evil, rename to evil-and-keys
 (provide 'init-misc)

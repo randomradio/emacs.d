@@ -2,8 +2,8 @@
 (use-package evil
   :ensure t
   :config
+    (add-to-list 'evil-emacs-state-modes 'neotree-mode)
     (evil-mode 1)
-
     ;; Move back the cursor one position when exiting insert mode
     (setq evil-move-cursor-back t)
 
@@ -58,9 +58,9 @@
 	    "af" 'ace-maximize-window
 	    "ac" 'aya-create
 	    ;; neotree keys
-	    "ntt" 'neotree-toggle
-	    "ntf" 'neotree-find ; open file in current buffer in neotree
-	    "ntd" 'neotree-project-dir
+	    "nt" 'neotree-toggle
+	    "nf" 'neotree-find ; open file in current buffer in neotree
+	    "nd" 'neotree-project-tree-toggle
 	    ;; file and directory
 	    "fn" 'cp-filename-of-current-buffer
 	    "fp" 'cp-fullpath-of-current-buffer
@@ -72,6 +72,10 @@
 	    "kk" 'find-file-in-project-by-selected
 	    "kn" 'find-file-with-similar-name ; ffip v5.3.1
 	    "fd" 'find-directory-in-project-by-selected
+	    "pjo" 'projectile-multi-occur
+	    "pjg" 'projectile-grep
+	    ; ag
+	    "as" 'ag-project ; search in project
 	    ;; comment vs uncomment
 	    "ci" 'evilnc-comment-or-uncomment-lines
 	    "cl" 'evilnc-comment-or-uncomment-to-the-line
@@ -138,4 +142,4 @@
     (evil-escape-mode 1))
     ;; }
 
-(provide 'init-evil)
+(provide 'init-evil-and-keys)

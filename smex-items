@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
- web-mode
- eval-buffer
- web-mode-block-close
- eval-region
- package-refresh-contents
+ magit-push-current
+ magit-commit-create
+ magit-stage-modified
+ delete-file
  package-install
- web-mode-enable
+ project-find-file
+ gofmt
 )
 
 ;; ----- smex-data -----
@@ -21,15 +21,15 @@
  (dired-find-alternate-file . 5)
  (eval-expression . 1)
  (package-refresh-contents . 4)
- (package-install . 6)
+ (package-install . 8)
  (counsel-file-register . 1)
- (delete-file . 4)
+ (delete-file . 5)
  (package-reinstall . 2)
  (company-mode . 3)
  (company-complete . 2)
  (save-buffer . 1)
  (neotree-enter . 4)
- (gofmt . 2)
+ (gofmt . 5)
  (load-theme . 4)
  (rename-buffer . 1)
  (expand-abbrev . 1)
@@ -41,4 +41,8 @@
  (web-mode-enable . 1)
  (eval-region . 2)
  (web-mode-block-close . 2)
+ (magit-push-current . 4)
+ (project-find-file . 1)
+ (magit-stage-modified . 1)
+ (magit-commit-create . 1)
 )

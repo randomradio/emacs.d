@@ -1,0 +1,1 @@
+("~/.emacs.d/" "~/go/src/git.garena.com/chenyang.zhao/go_entry_task/")

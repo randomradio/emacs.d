@@ -47,6 +47,15 @@
                    (*linux* nil)
                    (t nil)))
 
+;; ----------------------------------------------------------------------------
+;; make sure the mouse scroll event behaves the same on osx and other sytems
+;; @see https://github.com/syl20bnr/spacemacs/issues/4591
+(if *is-a-mac*
+    (progn
+    (global-set-key (kbd "<mouse-4>") (kbd "<wheel-up>"))
+    (global-set-key (kbd "<mouse-5>") (kbd "<wheel-down>"))))
+;; ----------------------------------------------------------------------------
+
 ;; @see https://www.reddit.com/r/emacs/comments/55ork0/is_emacs_251_noticeably_slower_than_245_on_windows/
 ;; Emacs 25 does gc too frequently
 (when *emacs25*
@@ -94,21 +103,23 @@
   (require 'init-utils)
   (require 'init-elpa)
   (require 'init-misc)
-  (require 'init-evil)
+  (require 'init-neotree)
+  (require 'init-evil-and-keys)
   (require 'init-themes)
   (require 'init-clipboard)
+
+  (require 'init-keyfreq)
+
   (require 'init-org)
   (require 'init-company)
 
+  ;; programming langs
   (require 'init-python)
   (require 'init-go)
   (require 'init-web)
   ;; fuzzy search
   (require 'init-ivy)
-  ;; programming langs
-
-  ;; which-key and keybindings
-  (require 'init-keys)
+  (require 'init-projectile)
 
   ;;----------------------------------------------------------------------------
   ;; @see https://github.com/hlissner/doom-emacs/wiki/FAQ
@@ -119,6 +130,7 @@
   (load (expand-file-name "~/.emacs.d/lisp/init-site-lisp") t t)
 
   (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+  (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
 )
 
 (setq gc-cons-threshold best-gc-cons-threshold)

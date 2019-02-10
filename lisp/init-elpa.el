@@ -106,8 +106,6 @@ locate PACKAGE."
 (require-package 'use-package)
 ;; general keys
 (require-package 'general)
-;; folder, neotree
-(require-package 'neotree)
 ;; evil related packages 
 (require-package 'evil-escape)
 (require-package 'evil-exchange)
@@ -121,5 +119,12 @@ locate PACKAGE."
 (require-package 'evil-lion)
 (require-package 'evil-args)
 (require-package 'evil-textobj-syntax)
+;; --------------------------------------------------------------
+;; syntax checking, also enble it globally
+(require-package 'flycheck)
+(global-flycheck-mode)
+;; --------------------------------------------------------------
+(require-package 'rainbow-delimiters)
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
 (provide 'init-elpa)
