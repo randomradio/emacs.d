@@ -1,0 +1,7 @@
+# emacs backup files
+.\#*
+# projectile stuff
+projectile-bookmarks.eld
+ido.last
+projectile.cache
+.smex-items

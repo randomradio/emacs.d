@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
- magit-push-current
+ godef-jump
+ go-import-add
+ projectile-add-known-project
  magit-commit-create
  magit-stage-modified
  delete-file
  package-install
- project-find-file
- gofmt
 )
 
 ;; ----- smex-data -----
@@ -41,8 +41,11 @@
  (web-mode-enable . 1)
  (eval-region . 2)
  (web-mode-block-close . 2)
- (magit-push-current . 4)
+ (magit-push-current . 3)
  (project-find-file . 1)
  (magit-stage-modified . 1)
  (magit-commit-create . 1)
+ (projectile-add-known-project . 1)
+ (go-import-add . 2)
+ (godef-jump . 1)
 )
