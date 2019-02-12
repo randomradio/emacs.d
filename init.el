@@ -82,6 +82,11 @@
   (if (string= "*Messages*" (buffer-name))
       (read-only-mode -1)))
 
+;; Org mode default directory and files
+(setq org-directory (expand-file-name "~/Dropbox/org_notes"))
+(setq org-default-notes-file (concat org-directory "/mygtd.org"))
+(setq org-agenda-files '("~/Dropbox/org_notes" "~/Dropbox/org_notes/org" "~/Dropbox/org_notes/_org"))
+
 ;;----------------------------------------------------------------------------
 ;; Bootstrap config
 ;;----------------------------------------------------------------------------

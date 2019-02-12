@@ -73,7 +73,6 @@
 	    "kn" 'find-file-with-similar-name ; ffip v5.3.1
 	    "fd" 'find-directory-in-project-by-selected
 	    "pjo" 'projectile-multi-occur
-	    "pjg" 'projectile-grep
 	    ; ag
 	    "as" 'ag-project ; search in project
 	    ;; comment vs uncomment
@@ -141,5 +140,12 @@
     ;; disable evil-escape when input method is on
     (evil-escape-mode 1))
     ;; }
+
+(use-package which-key
+  :ensure t
+  :config
+  (which-key-mode)
+  (which-key-setup-side-window-right)
+)
 
 (provide 'init-evil-and-keys)

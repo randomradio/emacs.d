@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
- godef-jump
- go-import-add
- projectile-add-known-project
- magit-commit-create
- magit-stage-modified
- delete-file
+ neotree-dir
  package-install
+ package-refresh-contents
+ counsel-load-theme
+ load-theme
+ projectile-ag
+ godef-jump
 )
 
 ;; ----- smex-data -----
@@ -20,8 +20,8 @@
  (dired-advertised-find-file . 5)
  (dired-find-alternate-file . 5)
  (eval-expression . 1)
- (package-refresh-contents . 4)
- (package-install . 8)
+ (package-refresh-contents . 5)
+ (package-install . 11)
  (counsel-file-register . 1)
  (delete-file . 5)
  (package-reinstall . 2)
@@ -30,7 +30,7 @@
  (save-buffer . 1)
  (neotree-enter . 4)
  (gofmt . 5)
- (load-theme . 4)
+ (load-theme . 6)
  (rename-buffer . 1)
  (expand-abbrev . 1)
  (rename-file . 3)
@@ -48,4 +48,7 @@
  (projectile-add-known-project . 1)
  (go-import-add . 2)
  (godef-jump . 1)
+ (projectile-ag . 1)
+ (counsel-load-theme . 1)
+ (neotree-dir . 1)
 )
