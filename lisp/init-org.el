@@ -63,18 +63,36 @@
 ;; -------------------------------------------
 (use-package org
   :ensure t
-  :init
   :config
+    (global-set-key (kbd "C-c l") 'org-store-link)
+    (global-set-key (kbd "C-c a") 'org-agenda)
+    (when (fboundp 'org-iswitchb)
+	(global-set-key (kbd "C-c b") 'org-iswitchb))
+    (when (fboundp 'org-switchb)
+	(global-set-key (kbd "C-c b") 'org-switchb))
+    (global-set-key (kbd "C-c c") 'org-capture)
+
     (setq org-imenu-depth 9)
     ;; @see http://irreal.org/blog/1
     (setq org-src-fontify-natively t)
-    ;; Set default notes capture path
-    (setq org-default-notes-file "~/Dropbox/org_notes/capture.org")
+    ;; Org mode default directory and files
+    (setq org-directory (expand-file-name "~/Dropbox/org_notes"))
+	;; Set default notes capture path
+    (setq org-default-notes-file (concat org-directory "/inbox.org"))
+    (setq org-agenda-files '("~/Dropbox/org_notes" "~/Dropbox/org_notes/org" "~/Dropbox/org_notes/_org"))
     ;; set default org-agenda-files location
     (setq org-agenda-files (list "~/Dropbox/org_notes/work.org"
-				"~/Dropbox/org_notes/notes.org"))
-  )
+				 "~/Dropbox/org_notes/mygtd.org"
+				 "~/Dropbox/org_notes/notes.org"))
 
+    (setq org-capture-templates '(("t" "Todo [inbox]" entry
+				(file+headline "~/Dropbox/org_notes/inbox.org" "Tasks")
+				"* TODO %i%?")
+				("n" "Note [notes]" entry
+				(file+headline "~/Dropbox/org_notes/notes.org" "Notes")
+				"* NOTE %i%?")
+				  ))
+    )
 
 (defun org-mode-hook-setup ()
   (unless (is-buffer-file-temp)

@@ -82,11 +82,6 @@
   (if (string= "*Messages*" (buffer-name))
       (read-only-mode -1)))
 
-;; Org mode default directory and files
-(setq org-directory (expand-file-name "~/Dropbox/org_notes"))
-(setq org-default-notes-file (concat org-directory "/mygtd.org"))
-(setq org-agenda-files '("~/Dropbox/org_notes" "~/Dropbox/org_notes/org" "~/Dropbox/org_notes/_org"))
-
 ;;----------------------------------------------------------------------------
 ;; Bootstrap config
 ;;----------------------------------------------------------------------------
@@ -135,7 +130,8 @@
   (load (expand-file-name "~/.emacs.d/lisp/init-site-lisp") t t)
 
   (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-  (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
+  (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+  (add-to-list 'auto-mode-alist '("\\.note\\'" . org-mode))
 )
 
 (setq gc-cons-threshold best-gc-cons-threshold)
