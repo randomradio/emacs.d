@@ -84,15 +84,49 @@
     (setq org-agenda-files (list "~/Dropbox/org_notes/work.org"
 				 "~/Dropbox/org_notes/mygtd.org"
 				 "~/Dropbox/org_notes/notes.org"))
-
-    (setq org-capture-templates '(("t" "Todo [inbox]" entry
-				(file+headline "~/Dropbox/org_notes/inbox.org" "Tasks")
-				"* TODO %i%?")
-				("n" "Note [notes]" entry
-				(file+headline "~/Dropbox/org_notes/notes.org" "Notes")
-				"* NOTE %i%?")
-				  ))
     )
+
+;; -------------------------------------------
+;; Org capture templates
+;; -------------------------------------------
+(setq org-capture-templates '(("t" "Todo [inbox]" entry
+			    (file+headline "~/Dropbox/org_notes/inbox.org" "Tasks")
+			    "* TODO %i%?")
+			    ("n" "Note [notes]" entry
+			    (file+headline "~/Dropbox/org_notes/notes.org" "Notes")
+			    "* NOTE %i%?")
+				))
+
+;; -------------------------------------------
+;; Org src improve org src and open target window
+;; -------------------------------------------
+(use-package org-src
+  :ensure nil
+  :after org
+  :config
+  (setq-default
+   org-edit-src-content-indentation 0
+   org-edit-src-persistent-message nil
+   org-src-window-setup 'current-window))
+
+;; -------------------------------------------
+;; Sticky header improves headding display
+;; -------------------------------------------
+(use-package org-sticky-header
+  :config
+  (setq-default
+   org-sticky-header-full-path 'full
+   org-sticky-header-outline-path-separator " / "))
+
+;; -------------------------------------------
+;; Improve org bullet points view
+;; -------------------------------------------
+(use-package org-bullets
+    :ensure t
+    :config
+    (setq org-bullets-bullet-list '("∙"))
+    (add-hook 'org-mode-hook 'org-bullets-mode))
+
 
 (defun org-mode-hook-setup ()
   (unless (is-buffer-file-temp)
