@@ -106,6 +106,8 @@ locate PACKAGE."
 (require-package 'use-package)
 ;; general keys
 (require-package 'general)
+;; allow multiple cursor editing
+(require-package 'multiple-cursors)
 ;; evil related packages 
 (require-package 'evil-escape)
 (require-package 'evil-exchange)
@@ -126,5 +128,7 @@ locate PACKAGE."
 ;; --------------------------------------------------------------
 (require-package 'rainbow-delimiters)
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+(require-package 'latex-preview-pane)
+(latex-preview-pane-enable)
 
 (provide 'init-elpa)
