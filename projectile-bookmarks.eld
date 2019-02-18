@@ -1,1 +1,0 @@
-("~/.emacs.d/" "~/dotfiles/" "~/go/src/git.garena.com/chenyang.zhao/go_entry_task/")

@@ -71,7 +71,10 @@
     (when (fboundp 'org-switchb)
 	(global-set-key (kbd "C-c b") 'org-switchb))
     (global-set-key (kbd "C-c c") 'org-capture)
-
+    ;; subtree editing
+    (global-set-key (kbd "C-c i") 'org-insert-heading)
+    (global-set-key (kbd "C-c d") 'org-do-demote)
+    (global-set-key (kbd "C-c u") 'org-do-promote)
     (setq org-imenu-depth 9)
     ;; @see http://irreal.org/blog/1
     (setq org-src-fontify-natively t)
@@ -79,11 +82,26 @@
     (setq org-directory (expand-file-name "~/Dropbox/org_notes"))
 	;; Set default notes capture path
     (setq org-default-notes-file (concat org-directory "/inbox.org"))
-    (setq org-agenda-files '("~/Dropbox/org_notes" "~/Dropbox/org_notes/org" "~/Dropbox/org_notes/_org"))
     ;; set default org-agenda-files location
     (setq org-agenda-files (list "~/Dropbox/org_notes/work.org"
-				 "~/Dropbox/org_notes/mygtd.org"
+				 "~/Dropbox/org_notes/inbox.org"
 				 "~/Dropbox/org_notes/notes.org"))
+
+    (setq org-capture-templates '(("t" "Todo [inbox]" entry
+				(file+headline "~/Dropbox/org_notes/inbox.org" "Tasks")
+				"* TODO %i%?")
+				("n" "Note [notes]" entry
+				(file+headline "~/Dropbox/org_notes/notes.org" "Notes")
+				"* NOTE %i%?")
+				("d" "Daily review [review]" plain
+				(file+datetree "~/Dropbox/daily_review.org")
+				"%K - %a\n%i\n%?\n"
+				:unnarrowed t)
+				("w" "Weekly review [review]" plain
+				(file+datetree "~/Dropbox/weekly_review.org")
+				"%K - %a\n%i\n%?\n"
+				:unnarrowed t)
+				  ))
     )
 
 ;; -------------------------------------------

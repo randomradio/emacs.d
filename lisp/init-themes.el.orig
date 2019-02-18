@@ -1,0 +1,25 @@
+;; Theme
+<<<<<<< HEAD
+
+;; Light theme
+(require-package 'leuven-theme)
+(require-package 'ample-theme)
+(require-package 'twilight-bright-theme)
+(require-package 'moe-theme)
+(require-package 'anti-zenburn-theme)
+(use-package doom-themes
+  :ensure t
+  :config
+  (load-theme 'doom-spacegrey t))
+=======
+(require-package 'monokai-theme)
+(require-package 'color-theme-sanityinc-tomorrow)
+(require-package 'doom-themes)
+(require-package 'spacemacs-theme)
+(require-package 'leuven-theme)
+(require 'kaolin-themes)
+
+(load-theme 'spacemacs-light t)
+>>>>>>> cf584e14274e72d81a4c8c139b949a0dd28b0bed
+
+(provide 'init-themes)

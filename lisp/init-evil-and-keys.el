@@ -60,7 +60,7 @@
 	    ;; neotree keys
 	    "nt" 'neotree-toggle
 	    "nf" 'neotree-find ; open file in current buffer in neotree
-	    "nd" 'neotree-project-tree-toggle
+	    "nd" 'neotree-project-dir-toggle
 	    ;; file and directory
 	    "fn" 'cp-filename-of-current-buffer
 	    "fp" 'cp-fullpath-of-current-buffer
