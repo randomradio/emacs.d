@@ -1,1 +1,1 @@
-("~/.emacs.d/" "~/go/src/git.garena.com/shopee/integration-hub/app/" "~/go/src/git.garena.com/chenyang.zhao/go_entry_task/" "~/dotfiles/")
+("~/.emacs.d/" "~/dotfiles/" "~/go/src/git.garena.com/shopee/integration-hub/app/" "~/go/src/git.garena.com/chenyang.zhao/go_entry_task/")

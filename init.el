@@ -82,6 +82,17 @@
   (if (string= "*Messages*" (buffer-name))
       (read-only-mode -1)))
 
+;; Setting font
+;; for terminal, set font in terminal app
+(set-face-attribute 'default nil
+                    :family "Source Code Pro"
+                    :height 110
+                    :weight 'normal
+                    :width 'normal)
+
+;; auto refresh buffer on change
+(global-auto-revert-mode t)
+
 ;;----------------------------------------------------------------------------
 ;; Bootstrap config
 ;;----------------------------------------------------------------------------
@@ -107,12 +118,12 @@
   (require 'init-evil-and-keys)
   (require 'init-themes)
   (require 'init-clipboard)
-
   (require 'init-keyfreq)
 
   (require 'init-org)
   (require 'init-company)
 
+  (require 'init-flycheck)
   ;; programming langs
   (require 'init-python)
   (require 'init-go)

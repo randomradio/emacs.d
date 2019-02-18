@@ -33,4 +33,6 @@
   :defer t
   )
 
+(local-require 'me-alpheus-gotags)
+
 (provide 'init-go)

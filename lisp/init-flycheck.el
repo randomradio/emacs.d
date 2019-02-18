@@ -4,3 +4,5 @@
   :ensure t
   :init
   )
+
+(provide 'init-flycheck)

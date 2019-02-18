@@ -1,5 +1,10 @@
 ;; -*- coding: utf-8; lexical-binding: t; -*-
 
+;; I always prefer to see the full path of current buffer
+(setq frame-title-format
+      (list (format "%s %%S: %%j " (system-name))
+        '(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
+
 ;; indention management
 (defun my-toggle-indentation ()
   (interactive)
@@ -67,5 +72,35 @@ is already narrowed."
 ;; keymap, that's how much I like this command. Only
 ;; copy it if that's what you want.
 (define-key ctl-x-map "n" #'narrow-or-widen-dwim)
+
+;; When using neotree, it's convenient to open neotree with root 
+;; set to folder containing current file
+(defun neotree-project-dir-toggle ()
+  "Open NeoTree using the project root, using find-file-in-project,
+or the current buffer directory."
+  (interactive)
+  (let ((project-dir
+         (ignore-errors
+           ;;; Pick one: projectile or find-file-in-project
+           ; (projectile-project-root)
+           (ffip-project-root)
+           ))
+        (file-name (buffer-file-name))
+        (neo-smart-open t))
+    (if (and (fboundp 'neo-global--window-exists-p)
+             (neo-global--window-exists-p))
+        (neotree-hide)
+      (progn
+        (neotree-show)
+        (if project-dir
+            (neotree-dir project-dir))
+        (if file-name
+            (neotree-find file-name))))))
+
+;; multiple cursor mode keybindings
+;; @see https://github.com/ogdenwebb/emacs-kaolin-themes
+(global-set-key (kbd "C-c m n") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-c m p") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c m a") 'mc/mark-all-like-this)
 
 (provide 'init-misc)
