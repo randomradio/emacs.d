@@ -105,21 +105,10 @@
     )
 
 ;; -------------------------------------------
-;; Org capture templates
-;; -------------------------------------------
-(setq org-capture-templates '(("t" "Todo [inbox]" entry
-			    (file+headline "~/Dropbox/org_notes/inbox.org" "Tasks")
-			    "* TODO %i%?")
-			    ("n" "Note [notes]" entry
-			    (file+headline "~/Dropbox/org_notes/notes.org" "Notes")
-			    "* NOTE %i%?")
-				))
-
-;; -------------------------------------------
 ;; Org src improve org src and open target window
 ;; -------------------------------------------
 (use-package org-src
-  :ensure nil
+  :ensure t
   :after org
   :config
   (setq-default
@@ -131,6 +120,7 @@
 ;; Sticky header improves headding display
 ;; -------------------------------------------
 (use-package org-sticky-header
+  :ensure t
   :config
   (setq-default
    org-sticky-header-full-path 'full
