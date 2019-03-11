@@ -130,5 +130,12 @@ locate PACKAGE."
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 (require-package 'latex-preview-pane)
 (latex-preview-pane-enable)
+;; highlight todo items
+(require-package 'hl-todo)
+(hl-todo-mode t)
+;; relative line number mode
+(require-package 'nlinum-relative)
+;; something else you want
+(add-hook 'prog-mode-hook 'nlinum-relative-mode)
 
 (provide 'init-elpa)

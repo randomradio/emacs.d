@@ -48,6 +48,7 @@
 (setq org-refile-targets '((nil :maxlevel . 5) (org-agenda-files :maxlevel . 5)))
 (setq org-refile-use-outline-path 'file)
 (setq org-outline-path-complete-in-steps nil)
+(setq org-refile-allow-creating-parent-nodes 'confirm)
 (defadvice org-refile (around org-refile-hack activate)
   ;; when `org-refile' scanning org files, disable user's org-mode hooks
   (let* ((force-buffer-file-temp-p t))
@@ -80,41 +81,33 @@
     (setq org-src-fontify-natively t)
     ;; Org mode default directory and files
     (setq org-directory (expand-file-name "~/Dropbox/org_notes"))
-	;; Set default notes capture path
+    ;; Set default notes capture path
+    ;; follow capture and store
     (setq org-default-notes-file (concat org-directory "/inbox.org"))
     ;; set default org-agenda-files location
-    (setq org-agenda-files (list "~/Dropbox/org_notes/work.org"
-				 "~/Dropbox/org_notes/inbox.org"
-				 "~/Dropbox/org_notes/notes.org"))
+    (setq org-agenda-files (list "~/Dropbox/org_notes/inbox.org"
+				 "~/Dropbox/org_notes/personal.org"
+				 "~/Dropbox/org_notes/notes.org"
+				 "~/Dropbox/org_notes/daily_review.org"
+				 "~/Dropbox/org_notes/weekly_review.org"))
 
     (setq org-capture-templates '(("t" "Todo [inbox]" entry
 				(file+headline "~/Dropbox/org_notes/inbox.org" "Tasks")
 				"* TODO %i%?")
 				("n" "Note [notes]" entry
-				(file+headline "~/Dropbox/org_notes/notes.org" "Notes")
+				(file+datetree "~/Dropbox/org_notes/notes.org")
 				"* NOTE %i%?")
 				("d" "Daily review [review]" plain
-				(file+datetree "~/Dropbox/daily_review.org")
+				(file+datetree "~/Dropbox/org_notes/daily_review.org")
 				"%K - %a\n%i\n%?\n"
 				:unnarrowed t)
 				("w" "Weekly review [review]" plain
-				(file+datetree "~/Dropbox/weekly_review.org")
+				(file+datetree "~/Dropbox/org_notes/weekly_review.org")
 				"%K - %a\n%i\n%?\n"
 				:unnarrowed t)
 				  ))
     )
 
-;; -------------------------------------------
-;; Org src improve org src and open target window
-;; -------------------------------------------
-(use-package org-src
-  :ensure t
-  :after org
-  :config
-  (setq-default
-   org-edit-src-content-indentation 0
-   org-edit-src-persistent-message nil
-   org-src-window-setup 'current-window))
 
 ;; -------------------------------------------
 ;; Sticky header improves headding display
@@ -129,11 +122,11 @@
 ;; -------------------------------------------
 ;; Improve org bullet points view
 ;; -------------------------------------------
-(use-package org-bullets
-    :ensure t
-    :config
-    (setq org-bullets-bullet-list '("∙"))
-    (add-hook 'org-mode-hook 'org-bullets-mode))
+;; (use-package org-bullets
+;;     :ensure t
+;;     :config
+;;     (setq org-bullets-bullet-list '("+"))
+;;     (add-hook 'org-mode-hook 'org-bullets-mode))
 
 
 (defun org-mode-hook-setup ()

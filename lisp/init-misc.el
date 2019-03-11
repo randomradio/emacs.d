@@ -103,4 +103,12 @@ or the current buffer directory."
 (global-set-key (kbd "C-c m p") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c m a") 'mc/mark-all-like-this)
 
+;; electric pair custom
+;; @see http://ergoemacs.org/emacs/emacs_insert_brackets_by_pair.html
+(setq electric-pair-pairs
+      '(
+        (?\` . ?\`)
+        ))
+(electric-pair-mode t)
+
 (provide 'init-misc)

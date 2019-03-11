@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
- neotree-dir
- package-install
- package-refresh-contents
+ gomoku
+ counsel-etags-grep-symbol-at-point
+ align-regexp
  counsel-load-theme
- load-theme
- projectile-ag
- godef-jump
+ counsel-etags-grep
+ magit-blame-popup
+ package-delete
 )
 
 ;; ----- smex-data -----
@@ -20,8 +20,8 @@
  (dired-advertised-find-file . 5)
  (dired-find-alternate-file . 5)
  (eval-expression . 1)
- (package-refresh-contents . 5)
- (package-install . 11)
+ (package-refresh-contents . 7)
+ (package-install . 13)
  (counsel-file-register . 1)
  (delete-file . 5)
  (package-reinstall . 2)
@@ -30,7 +30,7 @@
  (save-buffer . 1)
  (neotree-enter . 4)
  (gofmt . 5)
- (load-theme . 6)
+ (load-theme . 8)
  (rename-buffer . 1)
  (expand-abbrev . 1)
  (rename-file . 3)
@@ -46,9 +46,28 @@
  (magit-stage-modified . 1)
  (magit-commit-create . 1)
  (projectile-add-known-project . 1)
- (go-import-add . 2)
+ (go-import-add . 4)
  (godef-jump . 1)
  (projectile-ag . 1)
- (counsel-load-theme . 1)
+ (counsel-load-theme . 20)
  (neotree-dir . 1)
+ (org-columns-show-value . 1)
+ (org-overview . 1)
+ (electric-pair-mode . 1)
+ (todo-mode . 2)
+ (go-mode . 1)
+ (hl-todo-mode . 1)
+ (write-file . 1)
+ (protobuf-mode . 2)
+ (replace-regexp . 8)
+ (search-forward-regexp . 1)
+ (xdb . 1)
+ (linum-mode . 1)
+ (linum-relative-mode . 1)
+ (package-delete . 1)
+ (magit-blame-popup . 2)
+ (counsel-etags-grep . 2)
+ (counsel-etags-grep-symbol-at-point . 3)
+ (align-regexp . 1)
+ (gomoku . 1)
 )

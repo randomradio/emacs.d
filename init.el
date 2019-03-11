@@ -1,4 +1,6 @@
 ;; -*- coding: utf-8; lexical-binding: t; -*-
+;; enable this to debug errors,
+;; error will be shown in addtional window
 (setq debug-on-error t)
 
 ;; Added by Package.el.  This must come before configurations of
@@ -141,8 +143,8 @@
   (load (expand-file-name "~/.emacs.d/lisp/init-site-lisp") t t)
 
   (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-  (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
-  (add-to-list 'auto-mode-alist '("\\.note\\'" . org-mode))
+  ;; (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+  ;; (add-to-list 'auto-mode-alist '("\\.note\\'" . org-mode))
 )
 
 (setq gc-cons-threshold best-gc-cons-threshold)
